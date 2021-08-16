@@ -23,6 +23,16 @@ namespace DataAnnotation.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(Member member)
+        {
+            if(ModelState.IsValid)//เข้าสู่หน้า Scucess WelCome
+            {
+                return View("Scucess",member);
+            }
+            return View(member);
+        }
+
         public IActionResult Privacy()
         {
             return View();
