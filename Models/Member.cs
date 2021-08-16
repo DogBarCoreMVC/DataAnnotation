@@ -20,8 +20,10 @@ namespace DataAnnotation.Models
         [Required(ErrorMessage = "กรุณาใส่รหัสผ่าน")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "กรุณาใส่รหัสผ่านอีกครั้ง")]
+        [Required(ErrorMessage = "กรุณาใส่รหัสผ่าน")]
+        [Compare("Password",ErrorMessage = "กรุณาใส่รหัสให้ตรงกัน")]
         public string PasswordAgin { get; set; }
+        //attribute Compare ทำหน้าที่ตรวจสอบว่าค่าที่ใส่เข้ามาตรงกันกับ Property "Password" มั้ย
 
 
     }
